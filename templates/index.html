@@ -1,0 +1,63 @@
+﻿{% extends 'base.html' %} {% block content %}
+
+<h2 class="text-center mb-4">Add a Contact</h2>
+
+<!-- Input Box -->
+<div class="card shadow-sm p-4 mb-5">
+	<div class="row g-3 align-items-center">
+		<div class="col-md-5">
+			<input type="text" class="form-control" placeholder="Enter name" />
+		</div>
+		<div class="col-md-5">
+			<input type="text" class="form-control" placeholder="Enter phone number" />
+		</div>
+		<div class="col-md-2 d-grid">
+			<button class="btn btn-primary">Add</button>
+		</div>
+	</div>
+</div>
+
+<!-- Contact Cards -->
+<div class="row">
+	<div class="col-md-3 mb-4">
+		<div class="card shadow-sm h-100">
+			<div class="card-body">
+				<h5 class="card-title">John Doe</h5>
+				<p class="card-text">+66 912345678</p>
+				<button class="btn btn-danger btn-sm w-100">Delete</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3 mb-4">
+		<div class="card shadow-sm h-100">
+			<div class="card-body">
+				<h5 class="card-title">Jane Smith</h5>
+				<p class="card-text">+66 987654321</p>
+				<button class="btn btn-danger btn-sm w-100">Delete</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3 mb-4">
+		<div class="card shadow-sm h-100">
+			<div class="card-body">
+				<h5 class="card-title">Ali Khan</h5>
+				<p class="card-text">+66 889900112</p>
+				<button class="btn btn-danger btn-sm w-100">Delete</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3 mb-4">
+		<div class="card shadow-sm h-100">
+			<div class="card-body">
+				<h5 class="card-title">Maria Lopez</h5>
+				<p class="card-text">+66 776655443</p>
+				<button class="btn btn-danger btn-sm w-100">Delete</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
