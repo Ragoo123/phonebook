@@ -36,8 +36,10 @@ bootstrap.init_app(app)
 # --------------------------
 @app.route('/')
 def index():
+    all_contacts = Contact.query.all()
 
-    return render_template('index.html')  
+
+    return render_template('index.html', all_contacts=all_contacts)  
 
 # --------------------------
 # Run the app
