@@ -42,6 +42,20 @@ def index():
 
     return render_template('index.html', all_contacts=all_contacts, contact_form=contact_form)  
 
+@app.route('/add_contact', methods=['POST'])
+def add_contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        print("Form validated successfully.")
+        new_contact = Contact(
+            name=form.name.data,
+            phone_number=form.phone_number.data
+        )
+        db.session.add(new_contact)
+        db.session.commit()
+    return render_template('partials/_contact_card.html', contact=new_contact)
+
+
 # --------------------------
 # Run the app
 # --------------------------

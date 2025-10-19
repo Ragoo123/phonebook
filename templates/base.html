@@ -33,8 +33,14 @@
 			<small>© {{ current_year | default(2025) }} My Company. All rights reserved.</small>
 		</footer>
 
+		<!-- External libraries -->
 		{{ bootstrap.load_js() }}
-		<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js" integrity="sha384-ZBXiYtYQ6hJ2Y0ZNoYuI+Nq5MqWBr+chMrS/RkXpNzQCApHEhOt2aY8EJgqwHLkJ" crossorigin="anonymous"></script>
-		{% block scripts %} {% endblock %}
+		<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js" integrity="..." crossorigin="anonymous"></script>
+
+		<!-- Custom scripts -->
+		<script src="{{ url_for('static', filename='assets/js/main.js') }}" defer></script>
+
+		<!-- Page-specific scripts -->
+		{% block scripts %}{% endblock %}
 	</body>
 </html>

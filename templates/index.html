@@ -4,7 +4,7 @@
 
 <!-- Input Box -->
 <div class="card shadow-sm p-4 mb-5">
-	<form method="POST">
+	<form method="POST" hx-post="{{ url_for('add_contact') }}" hx-target="#contactList" hx-swap="beforeend scroll:window:bottom">
 		{{ contact_form.hidden_tag() }}
 		<div class="row g-3 align-items-center">
 			<div class="col-md-5">{{ contact_form.name(class="form-control", placeholder="Enter name") }}</div>
@@ -15,10 +15,10 @@
 </div>
 
 <!-- Contact Cards -->
-<div class="row">
-	{% if all_contacts %} {% for contact in all_contacts %} {% include 'partials/_contact_card.html' %} {% endfor %} {% else %}
-	<p class="text-center">No contacts available.</p>
-	{% endif %}
+<div class="row" id="contactList">
+    {% for contact in all_contacts %}
+        {% include 'partials/_contact_card.html' %}
+    {% endfor %}
 </div>
 
 {% endblock %}
