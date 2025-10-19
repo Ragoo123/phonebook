@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from extensions import db, login_manager, bcrypt, csrf, htmx, bootstrap
 from sqlalchemy import text,select
 from models import Contact
+from forms import ContactForm
 
 
 
@@ -37,9 +38,9 @@ bootstrap.init_app(app)
 @app.route('/')
 def index():
     all_contacts = Contact.query.all()
+    contact_form = ContactForm()
 
-
-    return render_template('index.html', all_contacts=all_contacts)  
+    return render_template('index.html', all_contacts=all_contacts, contact_form=contact_form)  
 
 # --------------------------
 # Run the app
